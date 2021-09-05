@@ -9,15 +9,15 @@ public class LogService {
     private LogHandler logHandler;
 
     public void debug(String message) {
-        logHandler.log("stack trace");
-        logHandler.log(message);
+        logHandler.update("stack trace");
+        logHandler.update(message);
     }
 
     public void info(String message) {
-        logHandler.log(message);
+        logHandler.update(message);
     }
     public void error(String message) {
-        logHandler.log("error");
-        logHandler.log(message);
+        logHandler.update("error");
+        logHandler.update(message);
     }
 }

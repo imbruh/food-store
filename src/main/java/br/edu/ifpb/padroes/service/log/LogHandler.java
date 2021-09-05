@@ -1,6 +1,8 @@
 package br.edu.ifpb.padroes.service.log;
 
-public class LogHandler {
+import br.edu.ifpb.padroes.service.mail.NotificationListener;
+
+public class LogHandler implements NotificationListener{
 
     public LogHandler(LogHandlerType type) {
         this.type = type;
@@ -10,7 +12,8 @@ public class LogHandler {
 
     private LogHandlerType type;
 
-    public void log(String message) {
+    @Override
+    public void update(String message) {
         if (type.equals(LogHandlerType.DATABASE)) {
             System.out.println("save data to database");
         } else if (type.equals(LogHandlerType.FILE)) {
